@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        jcenter()
+        
+    }
+    dependencies {
+        //Check for the latest version here: http://plugins.gradle.org/plugin/com.jfrog.artifactory
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1"
+    }
+}
+
+allprojects {
+    apply plugin: "com.jfrog.artifactory"
+}
+
+artifactory {
+    contextUrl = "http://3.237.101.57:8082/artifactory/"   //The base Artifactory URL if not overridden by the publisher/resolver
+    publish {
+        repository {
+            repoKey = 'libs-snapshot-local'
+            username = "admin"
+            password = "Admin_20"
+           ivy {
+                mavenCompatible = true
+            }
+            
+        }
+    }
+    resolve {
+        repository {
+            repoKey = 'libs-release-virtualdev'
+            username = "admin"
+            password = "Admn_20"
+            maven = true
+            
+        }
+    }
+}
