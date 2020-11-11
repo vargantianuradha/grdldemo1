@@ -9,9 +9,7 @@ buildscript {
     }
 }
 
-allprojects {
     apply plugin: "com.jfrog.artifactory"
-}
 
 artifactory {
     contextUrl = "http://3.237.101.57:8082/artifactory/"   //The base Artifactory URL if not overridden by the publisher/resolver
