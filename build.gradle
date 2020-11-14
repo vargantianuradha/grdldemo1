@@ -28,9 +28,6 @@ repositories {
     add buildscript.repositories.getByName("maven-main-cache")
 }
 
-dependencies {
-    compile 'org.scala-lang:scala-library:2.11.2'
-}
 
 tasks.withType(ScalaCompile) {
     scalaCompileOptions.useAnt = false
