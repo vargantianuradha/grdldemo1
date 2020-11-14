@@ -24,10 +24,6 @@ status = 'Integration'
     }
   }
 
-repositories {
-    add buildscript.repositories.getByName("maven-main-cache")
-}
-
 
 tasks.withType(ScalaCompile) {
     scalaCompileOptions.useAnt = false
