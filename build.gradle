@@ -1,19 +1,10 @@
 buildscript {
-    repositories {
-        maven {
-            url 'http://13.233.18.221:8082/artifactory/plugins-release'
-            credentials {
-                username = "${artifactory_user}"
-                password = "${artifactory_password}"
-            }
-            name = "maven-main-cache"
-        }
-    }
+  repositories {
+    jcenter()
     dependencies {
-        implementation 'org.jfrog.buildinfo:build-info-extractor-gradle:4.18.0'
-        
-        
+      classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
     }
+  }
 }
 
 apply plugin: 'scala'
