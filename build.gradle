@@ -9,26 +9,26 @@ buildscript {
     }
 }
 
+allprojects {
     apply plugin: "com.jfrog.artifactory"
+}
 
 artifactory {
-    contextUrl = "http://3.237.101.57:8082/artifactory/"   //The base Artifactory URL if not overridden by the publisher/resolver
+    contextUrl = "${artifactory_contextUrl}"   //The base Artifactory URL if not overridden by the publisher/resolver
     publish {
         repository {
             repoKey = 'libs-snapshot-local'
-            username = "admin"
-            password = "Admin_20"
-           ivy {
-                mavenCompatible = true
-            }
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+            maven = true
             
         }
     }
     resolve {
         repository {
-            repoKey = 'libs-release-virtualdev'
-            username = "admin"
-            password = "Admn_20"
+            repoKey = 'gradel-dev-virtual'
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
             maven = true
             
         }
