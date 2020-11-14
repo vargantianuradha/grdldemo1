@@ -24,8 +24,6 @@ status = 'Integration'
         }
     }
   }
-}
-
 
 repositories {
     add buildscript.repositories.getByName("maven-main-cache")
