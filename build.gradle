@@ -20,7 +20,10 @@ artifactory {
             repoKey = 'libs-snapshot-local'
             username = "${artifactory_user}"
             password = "${artifactory_password}"
-            maven = true
+             ivy {
+                mavenCompatible = true
+            }
+  
             
         }
     }
@@ -29,8 +32,10 @@ artifactory {
             repoKey = 'gradel-dev-virtual'
             username = "${artifactory_user}"
             password = "${artifactory_password}"
-            maven = true
-            
+             ivy {
+                mavenCompatible = true
+            }
+  
         }
     }
 }
