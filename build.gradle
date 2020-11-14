@@ -9,10 +9,9 @@ buildscript {
 
 apply plugin: 'scala'
 apply plugin: 'maven-publish'
-apply plugin: "com.jfrog.artifactory"
 apply plugin: 'idea'
 apply plugin: 'java'
-group = 'org.jfrog.example.gradle'
+
 version = currentVersion
 status = 'Integration'
   repositories {
