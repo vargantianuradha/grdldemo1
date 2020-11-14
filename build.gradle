@@ -23,12 +23,6 @@ status = 'Integration'
         }
     }
   }
-
-
-tasks.withType(ScalaCompile) {
-    scalaCompileOptions.useAnt = false
-}
-
 artifactory {
   contextUrl = 'http://127.0.0.1:8081/artifactory'
   publish {
